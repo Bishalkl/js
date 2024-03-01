@@ -137,20 +137,72 @@ function bye(){
 // foreach
 let numberr = [54, 383, 68, 39, 34];
 
-numberr.forEach(function(numbers) {
-    if (checkNumbers(numbers)) {
-        console.log(numbers);
-    }
-});
+let names = ["bishal", "bishnu", "roshan"];
 
-function checkNumbers(num) {
-    if (num % 2 === 0) {
-        return true;
-    } else {
-        return false;
+names.forEach(capName);
+numberr.forEach(checkNumber);
+
+
+function capName(element , index, array){
+    array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+    console.log(array[index]);
+}
+
+function checkNumber(element, index, array){
+    array[index] = element;
+    if(element % 2 == 0){
+        console.log("Even");
+    }else{
+        console.log("Odd");
     }
 }
 
+
+// map() = accepts a callback and applies that function to each element of an array, then return a new array
+console.log(names.map(capName));
+
+
+function capName(element , index, array){
+     return array[index] = element.charAt(0).toUpperCase() + element.slice(1);
+     
+}
+
+
+// filter() = create a new array by filtering out elements
+
+let a = [1,2,3,5,6,8,9,3,4,6,7,3,5];
+console.log(a.filter(isOdd));
+
+function isOdd(element,index,array){
+    return element % 2 !== 0 && array.indexOf(element) === index;
+}
+
+
+// reduce() = reduce the elements of an array to a single value
+const prices = [10,347,14,23];
+
+console.log(prices.reduce(sum));
+
+function sum(accumilator, element){
+    return accumilator + element;
+}
+
+
+//function expression
+const sayonara= function(){
+    console.log('bye');
+}
+
+sayonara();
+
+// setTimeout() == to time a set
+ 
+// legal to use function as a argument
+setTimeout(function(){
+    console.log('hello');
+}, 5000);
+
+// arrowfunction
 
 
 
@@ -176,6 +228,11 @@ function checkNumbers(num) {
 // join() 
 // callback a funnction that is passed as an argument to another function.
 // forEach()
+// map()
+// filter()
+// reduce()
+// setTimeout()
+// function as a expression
 
 
 
@@ -183,6 +240,11 @@ function checkNumbers(num) {
 
 
 
+
+// my project is to make a program which helps to conver the Temperature conversion program
+// my project is to make dice roller
+// my project is to make random number game
+// my project is to generat a random password
 
 
 
