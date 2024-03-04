@@ -3,7 +3,9 @@ const valueInput = document.getElementById("input");
 const btn = document.getElementById("btn");
 
 let min = 1;
-let max = 10
+let max = 10;
+
+
 function randomGenerator(){
     return  Math.floor(Math.random() * (max - min) + 1) + min;
 }
