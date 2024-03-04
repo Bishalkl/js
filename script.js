@@ -63,10 +63,10 @@
 
 // variable scope = where a variable is recognized 
 
-// my project is to make a program which helps to conver the Temperature conversion program
-// my project is to make dice roller
-// my project is to make random number game
-// my project is to generat a random password
+// my project is to make a program which helps to conver the Temperature conversion program ...done
+// my project is to make dice roller  tommorow
+// my project is to make random number game ...done
+// my project is to generat a random password ... day after tommorow  
 
 
 // spread opeartor : ... alows an iterable such as an array or string to be expanded into sperate elements (unpack the elements)
@@ -189,7 +189,7 @@ function sum(accumilator, element){
 
 
 //function expression
-const sayonara= function(){
+const sayonara = function(){
     console.log('bye');
 }
 
@@ -198,11 +198,86 @@ sayonara();
 // setTimeout() == to time a set
  
 // legal to use function as a argument
-setTimeout(function(){
-    console.log('hello');
-}, 5000);
+setTimeout( () => console.log("Hello"), 3000);
 
-// arrowfunction
+// arrowfunction : a concise way to write function expressions good for simple function that you use only once (parameters) => some code
+
+
+
+const e = [1,3,4,5,6,7,4,3,3,6,88,3];
+const cube = e.map((element) => Math.pow(element, 3));
+console.log(cube);
+
+const oddNumbers = e.filter( (element, index, array) => array[index] % 2 !== 0 && array.indexOf(element) === index);
+console.log(oddNumbers)
+
+const total = e.reduce( (a, b) => a + b);
+console.log(total);
+
+
+// object
+const person1 = {
+    firstName: "Bishal",
+    lastName: "koirala",
+    isEmployed: false,
+    age: 20,
+    sayhello: function(){console.log(`Hello, I name is ${this.firstName} ${this.lastName}`)},
+    eat: () => console.log("I eat food"),
+}
+
+console.log(person1.isEmployed, person1.age);
+person1.sayhello();
+person1.eat();
+
+
+
+// this : reference to the object where This is used (object depends on the immediate context.(example: person.name = this.name), However, it doesn't work with arrow fuction, it will return window object instead.
+
+const person2 = {
+    firstName: "Komal",
+    lastName: "koirala",
+    isEmployed: false,
+    age: 20,
+    sayhello: function(){console.log(`Hello, I name is ${this.firstName} ${this.lastName}`)},
+    eat: () => console.log("I eat food"),
+}
+
+// constructor: special method for defining the properties and method of objects.
+
+function Car(make, model, year, color){
+    this.make = make,
+    this.model = model,
+    this.year = year,
+    this.color = color,
+    this.drive = function(){console.log(`Hello, i am driving ${this.model} made in ${this.make}on ${this.year}.`)}
+}
+
+const car1 = new Car("Nepal", "Mustang", 2004, "Red");
+
+console.log(car1.make, car1.model, car1.year, car1.color);
+
+car1.drive();
+
+// class = {Es6 feature} provides a more structured and cleaner way to work with objects compared  to traditional constructor function ex. static keyword, encapsulation, inheritance.nam
+
+
+class product{
+
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+
+    displayProduct(){
+        console.log(`Product : ${this.name}`);
+        console.log(`Price: ${this.price}`);
+    }
+
+}
+
+const product1 = new product("Bishal", 24);
+product1.displayProduct();
+
 
 
 
@@ -233,6 +308,14 @@ setTimeout(function(){
 // reduce()
 // setTimeout()
 // function as a expression
+// arrow function
+// object
+// this
+// constructor
+// tofixed(arguement) (to get a decimal)
+// class
+// static
+// method
 
 
 
@@ -241,10 +324,13 @@ setTimeout(function(){
 
 
 
-// my project is to make a program which helps to conver the Temperature conversion program
+
+
+
+// my project is to make a program which helps to conver the Temperature conversion program ...... done
 // my project is to make dice roller
-// my project is to make random number game
-// my project is to generat a random password
+// my project is to make random number game ..... done
+// my project is to generat a random password  
 
 
 
