@@ -280,6 +280,150 @@ product1.displayProduct();
 
 
 
+// inheritance 
+class Animal{
+    constructor(name){
+        this.name = name;
+    }
+
+    // method  for make a sound
+    makesound() {
+        return "Generic animal sound";
+    }
+}
+
+// Define a subclass Dog that extends Animal
+class Dog extends Animal{
+    constructor(name){
+        super(name);
+    }
+
+    makesound(){
+        return "Woof!";
+    }
+
+    // Method specific to Dog class
+    fetch(items) {
+        return `${this.name} fetched the ${items}`
+    }
+}
+
+// Define a subclass Cat that extends Animal
+class Cat extends Animal {
+    constructor(name){
+        super(name);
+    }
+
+    // Method to make cat sound
+    makesound() {
+        return "Meow!";
+    }
+}
+
+const dog = new Dog("Buddy");
+const cat = new Cat("Whiskers");
+
+// Test the method
+console.log(dog.makesound());
+console.log(dog.fetch("ball"));
+console.log(cat.makesound());
+
+
+// super keyword = keyword is used in classes to call the constructor or accessthis o the properties and method of a parent (superclass) 
+// this = this object
+// super = the parent
+
+
+
+// getter and setter
+class Rectangle{
+
+    constructor(width, height){
+        this.width = width;
+        this.height = height;
+    }
+
+    set width(newWidth){
+        if(newWidth > 0){
+            this._width = newWidth;
+        }
+        else{
+            console.log("Width must be a positive number");
+        }
+    }
+
+
+    set height(newHeight){
+        if(newHeight > 0){
+            this._height = newHeight;
+        }
+        else{
+            console.log("height must be a positive number")
+        }
+    }
+
+
+    get width(){
+        return `${Number(this._width).toFixed(1)}cm`;
+    }
+
+    get height(){
+        return `${Number(this._height).toFixed(1)}cm`;
+    }
+
+    get area(){
+        return `${(Number(this._width) * Number(this._height)).toFixed(1)} cm square.`;
+    }
+
+}
+
+const rectangle = new Rectangle(4,2);
+
+rectangle.width = 12;  // it is by getter
+rectangle.height = 14; // it is by getter
+// and condition or property by a setter 
+
+console.log(rectangle.width);
+console.log(rectangle.height);
+console.log(rectangle.area);
+
+
+// Destructuring = extract values afrom arrays and objects, then assign them to variables in convenient way .
+// [] = to perform array destructuring
+// {} = to perform object destructuring
+
+// swap to value of to variable
+let g = 1;
+let h = 2;
+
+// example one 
+[g, h] = [h, g];
+console.log(g);
+console.log(h);
+
+
+// example two
+
+const color = ["red", "blue", "green"];
+const [firstcolor, secondcolor, thirdcolor] = color;
+console.log(firstcolor);
+console.log(secondcolor);
+console.log(thirdcolor);
+
+
+// example third
+// first  create a object
+const student1 = {
+    fullName : "Bisha koirala",
+    age : 20,
+    address: "Khorsane",    
+}
+
+function displayStudent({fullName, age, address}){
+    console.log(`Hello ${fullName}, You are ${age} from ${address}`);
+}
+
+displayStudent(student1);
 
 // today i have learned
 // string slicing
@@ -316,6 +460,16 @@ product1.displayProduct();
 // class
 // static
 // method
+// super keyword
+// Inheritance 
+// Getter & Setters
+// Destructuring
+// Nested Objects
+// Arrays of objects
+
+
+
+
 
 
 
