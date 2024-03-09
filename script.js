@@ -425,6 +425,82 @@ function displayStudent({fullName, age, address}){
 
 displayStudent(student1);
 
+
+
+const student2 = {
+    fullName: "Komal koirala",
+    age: 21,
+    address: {
+        country: "Nepal",
+        city: "Khorsane",
+        district: "Morang",
+    }
+
+}
+
+console.log(student2.address);
+
+const students = [{ name: "Bishal koirala", age: 21}, 
+                  { name: "Komal koirala", age: 20},
+                  { name: "Sujan limbu", age: 19}];
+
+students.push({name: "Bishnu", age: 23});
+console.log(students);
+
+
+// using map
+const studentsName = students.map(Name => Name.name);
+console.log(studentsName);
+
+// using filter
+const checkAge = students.filter(Age => Age.age <= 20);
+console.log(checkAge);
+
+// using reduce
+const filtermajor = students.reduce(function (accumilator, element){
+    if(element.age === 20){
+        return accumilator + 1;
+    } else {
+        return accumilator;
+    }
+
+},0);
+
+console.log(filtermajor);
+
+// using reduce method to get a student detail which have minimun age
+
+const minAge = students.reduce((min, Age) => Age.age < min.age ? Age : min);
+console.log(minAge);
+
+
+// sort: method used to sort elements of an array in place. Sorts elements as string in lexicographic order, not alphabetical lexicographic = (alphabet + numbers + symbols)
+
+let numbers = [10,4,5,3,2,6,9,7,8,1];
+
+console.log(students.sort((a, b) => a.age - b.age));
+console.log(students.sort((a, b)=> a.name.localeCompare(b.name)));
+
+// Date
+const time = new Date( 2024, 0, 1, 2, 4, 5);
+console.log(time);
+
+// closure
+function outer(){
+
+    let message = "Hello";
+
+    function display(){
+        console.log(message);
+    }
+    display();
+}
+
+outer();
+
+//  setTimeout()
+// setTimeout(()=> window.alert("Hello, Bishal"), 6000);
+
 // today i have learned
 // string slicing
 // method chaining
@@ -464,9 +540,13 @@ displayStudent(student1);
 // Inheritance 
 // Getter & Setters
 // Destructuring
-// Nested Objects
+// Nested Objects 
 // Arrays of objects
-
+// sorting
+// shuffle an array
+// Dates : this represents dates and time and we can manipulate it 
+// closures : A function defined inside  of another functions, the inner function has access to the variable  and scope of the outer functions.
+// setTimeout()
 
 
 
@@ -482,9 +562,9 @@ displayStudent(student1);
 
 
 // my project is to make a program which helps to conver the Temperature conversion program ...... done
-// my project is to make dice roller
+// my project is to make dice roller  
 // my project is to make random number game ..... done
-// my project is to generat a random password  
+// my project is to generat a random password  .... currently working 
 
 
 
