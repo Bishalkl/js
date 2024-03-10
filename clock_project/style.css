@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: monospace;
+    background-image: url(./tokyo-japan-TOKYOTG0621-52012ff551dc46c4a87ac8e3151307a4.jpg);
+}
+
+
+.container h1{
+    font-size: 5rem;
+    font-weight: bold;
+    border: none;
+    padding: 3rem;
+    border-radius: 2rem;
+    backdrop-filter: 2px blue;
+    background-color: rgba(0, 0, 0, 0.318);
+    color: white;
+}
