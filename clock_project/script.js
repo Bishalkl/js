@@ -1,23 +1,35 @@
-const update = document.getElementById("update");
-// function for update
-function updateDate() {
-    // creating object to get data value
-    let date = new Date();
+class DateTimeUpdater {
+    constructor(updateElementId) {
+        this.updateElement = document.getElementById(updateElementId);
+        this.updateDateTime(); // Update the time immediately
+        this.startUpdating(); // Start updating the time continuously
+    }
 
-    let currenthour = date.getDate();
-    let currentmin = date.getMinutes();
-    let currentsecond = date.getSeconds();
+    updateDateTime() {
+        // Create a new Date object to get the current date and time
+        let currentDate = new Date();
 
-    // formating the time value to add leading zero if necceray
-    currenthour = currenthour < 10 ? "0" + currenthour : currenthour;
-    currentmin = currentmin < 10 ? "0" + currentmin : currentmin; 
-    currentsecond = currentsecond < 10 ? "0" + currentsecond : currentsecond;
+        // Extract hours, minutes, and seconds from the Date object
+        let currentHour = currentDate.getHours().toString().padStart(2, '0');
+        let currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
+        let currentSecond = currentDate.getSeconds().toString().padStart(2, '0');
 
-    // display
-    update.textContent= `${currenthour}:${currentmin}:${currentsecond}`;
+        // Update the displayed time
+        this.updateElement.textContent = `${currentHour}:${currentMinute}:${currentSecond}`;
+    }
 
+    startUpdating() {
+        // Update the time every second
+        this.intervalId = setInterval(() => {
+            this.updateDateTime();
+        }, 1000);
+    }
+
+    stopUpdating() {
+        // Stop updating the time
+        clearInterval(this.intervalId);
+    }
 }
 
-
-setInterval(updateDate, 1000);
-
+// Create an instance of DateTimeUpdater with the ID of the update element
+const dateTimeUpdater = new DateTimeUpdater("update");
