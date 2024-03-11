@@ -1,35 +1,38 @@
-class DateTimeUpdater {
-    constructor(updateElementId) {
-        this.updateElement = document.getElementById(updateElementId);
-        this.updateDateTime(); // Update the time immediately
-        this.startUpdating(); // Start updating the time continuously
+// create a class to get all the package 
+class DateTime{
+
+    // constructor
+    constructor(updateElementID){
+        this.updateElementID = document.getElementById(updateElementID);
+        this.StartDate();
     }
 
-    updateDateTime() {
-        // Create a new Date object to get the current date and time
-        let currentDate = new Date();
+    // method to update a date
+    updateDate(){
+        // let date object
+        let date = new Date();
 
-        // Extract hours, minutes, and seconds from the Date object
-        let currentHour = currentDate.getHours().toString().padStart(2, '0');
-        let currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
-        let currentSecond = currentDate.getSeconds().toString().padStart(2, '0');
+        // getting date and padding string 
+        let hour = date.getHours().toString().padStart(2, '0');
+        let minuite = date.getMinutes().toString().padStart(2, '0');
+        let second = date.getSeconds().toString().padStart(2, '0');
 
-        // Update the displayed time
-        this.updateElement.textContent = `${currentHour}:${currentMinute}:${currentSecond}`;
+        // update into text document
+        this.updateElementID.textContent = `${hour}:${minuite}:${second}`;
     }
 
-    startUpdating() {
-        // Update the time every second
+    //start
+    StartDate(){
+        
         this.intervalId = setInterval(() => {
-            this.updateDateTime();
+            this.updateDate();
         }, 1000);
     }
 
-    stopUpdating() {
-        // Stop updating the time
+    //stop Date
+    stopDate(){
         clearInterval(this.intervalId);
     }
+    
 }
-
-// Create an instance of DateTimeUpdater with the ID of the update element
-const dateTimeUpdater = new DateTimeUpdater("update");
+const newDate = new DateTime('update');
