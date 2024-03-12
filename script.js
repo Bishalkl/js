@@ -1,5 +1,8 @@
-// 
+import {areaCircle, circumCircle} from './util.js';
 
+
+console.log(areaCircle(12));
+console.log(circumCircle(34));
 
 // string slicing
 // const email = "Bishal@gmail.com";
@@ -162,10 +165,6 @@ function checkNumber(element, index, array){
 console.log(names.map(capName));
 
 
-function capName(element , index, array){
-     return array[index] = element.charAt(0).toUpperCase() + element.slice(1);
-     
-}
 
 
 // filter() = create a new array by filtering out elements
@@ -501,6 +500,27 @@ outer();
 //  setTimeout()
 // setTimeout(()=> window.alert("Hello, Bishal"), 6000);
 
+
+// error handling
+// try
+// catch
+// finally
+
+try{
+    console.log(x);
+}
+
+catch(error){
+    console.error(error);
+}
+finally{
+    console.log("it execute finally");
+}
+
+console.log("It doesn't interrupt any program");
+
+
+
 // today i have learned
 // string slicing
 // method chaining
@@ -547,6 +567,11 @@ outer();
 // Dates : this represents dates and time and we can manipulate it 
 // closures : A function defined inside  of another functions, the inner function has access to the variable  and scope of the outer functions.
 // setTimeout()
+// module
+// synchronous = executes line by line consecutively in a sequential manner code that waits for an operation to complete.
+// asynchronous = allows multiple operations to be performed concurrently without waiting Doesn't block that execution flow and allows the program to continue (I/O operation, network requests, fetching data Handled with: callbacks, Promises, Async?Await)
+// error handling =An object that is created to represent a problem that occurs occur often with user uinput or establishing a connection
+
 
 
 
