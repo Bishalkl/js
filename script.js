@@ -529,6 +529,32 @@ const username = "";
 const message = document.getElementById("message");
 
 message.textContent += username === "" ? 'Bishal' : username; 
+ 
+// getElementBYclassname()
+const  list = document.getElementsByClassName('fruits');
+
+
+// for( let lists of list){
+//     lists.style.backgroundColor = 'red';
+// }
+
+Array.from(list).forEach(fruit => {
+    fruit.style.color = 'red';
+})
+
+// getElementBYTagName()
+const pElements = document.getElementsByTagName('p');
+
+Array.from(pElements).forEach(pElement => {
+    pElement.style.backgroundColor = "gray";
+})
+
+// Dom navigation
+const Home = document.getElementById('Home');
+const contact = document.getElementById('Contact');
+const nextsibling = Home.nextElementSibling.style.backgroundColor = "green";
+contact.previousElementSibling.style.backgroundColor = "black";
+
 
 
 
@@ -584,8 +610,18 @@ message.textContent += username === "" ? 'Bishal' : username;
 // asynchronous = allows multiple operations to be performed concurrently without waiting Doesn't block that execution flow and allows the program to continue (I/O operation, network requests, fetching data Handled with: callbacks, Promises, Async?Await)
 // error handling =An object that is created to represent a problem that occurs occur often with user uinput or establishing a connection
 //DOM
-// element selector
-// getelementbyid
+// element selector => Element OR Null
+// getelementbyid =>Html collection
+// getelementbyTagName =>Html collection
+// querySelector => First element or null
+// querySelector => Nodelist, it has built in function.
+// Dom navigation
+
+
+
+
+
+
 
 
 
