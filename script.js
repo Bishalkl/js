@@ -511,13 +511,25 @@ try{
 }
 
 catch(error){
-    console.error(error);
+    console.log(error);
 }
 finally{
     console.log("it execute finally");
 }
 
 console.log("It doesn't interrupt any program");
+
+
+// Dom = Document object model
+document.title = "My Website";
+console.log(document.body.style.backgroundColor =  "white");
+console.dir("My website");
+
+const username = "";
+const message = document.getElementById("message");
+
+message.textContent += username === "" ? 'Bishal' : username; 
+
 
 
 
@@ -571,6 +583,11 @@ console.log("It doesn't interrupt any program");
 // synchronous = executes line by line consecutively in a sequential manner code that waits for an operation to complete.
 // asynchronous = allows multiple operations to be performed concurrently without waiting Doesn't block that execution flow and allows the program to continue (I/O operation, network requests, fetching data Handled with: callbacks, Promises, Async?Await)
 // error handling =An object that is created to represent a problem that occurs occur often with user uinput or establishing a connection
+//DOM
+// element selector
+// getelementbyid
+
+
 
 
 
